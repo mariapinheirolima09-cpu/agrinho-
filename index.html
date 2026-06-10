@@ -1,82 +1,10 @@
- # Agrinho 2026 - Mini Jogo Interativo
-# Autor: Seu Nome
-# Repositório GitHub: agrinho-2026
-
-import random
-import time
-
-def introducao():
-    print("🎉 Bem-vindo ao Agrinho 2026! 🎉")
-    print("Você é um jovem agricultor e precisa tomar decisões para salvar sua fazenda!")
-    time.sleep(2)
-    print("\nVamos começar a aventura!\n")
-    time.sleep(1)
-
-def desafio_cultivo():
-    print("🌱 Desafio de Cultivo:")
-    print("Você precisa escolher uma semente para plantar:")
-    print("1 - Milho 🌽")
-    print("2 - Feijão 🫘")
-    print("3 - Tomate 🍅")
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meu Site</title>
+</head>
+<body>
+<h1>Meu site está funcionando!</h1>
+</body>
+</html>
     
-    escolha = input("Escolha 1, 2 ou 3: ")
-    
-    resultado = random.choice(["bom", "ruim"])
-    
-    if escolha == "1":
-        planta = "Milho"
-    elif escolha == "2":
-        planta = "Feijão"
-    elif escolha == "3":
-        planta = "Tomate"
-    else:
-        print("Escolha inválida! Perdeu a rodada.")
-        return False
-    
-    print(f"Você plantou {planta}...")
-    time.sleep(2)
-    
-    if resultado == "bom":
-        print(f"✅ Cresceu saudável! Você ganhou 10 pontos.")
-        return 10
-    else:
-        print(f"❌ As plantas não cresceram bem. Você perdeu 5 pontos.")
-        return -5
-
-def desafio_mercado():
-    print("\n💰 Desafio do Mercado:")
-    print("Você pode vender seus produtos ou guardá-los para o próximo ciclo.")
-    escolha = input("Digite 'vender' ou 'guardar': ").lower()
-    
-    if escolha == "vender":
-        pontos = random.randint(5, 15)
-        print(f"Você vendeu seus produtos e ganhou {pontos} pontos!")
-        return pontos
-    elif escolha == "guardar":
-        pontos = random.randint(-5, 20)
-        print(f"Você guardou os produtos... Pontos ganhos: {pontos}")
-        return pontos
-    else:
-        print("Escolha inválida! Sem pontos desta rodada.")
-        return 0
-
-def main():
-    introducao()
-    pontos_totais = 0
-    
-    for rodada in range(1, 4):
-        print(f"\n--- Rodada {rodada} ---")
-        pontos_totais += desafio_cultivo()
-        pontos_totais += desafio_mercado()
-        print(f"Pontos acumulados: {pontos_totais}")
-    
-    print("\n🏆 Fim do jogo! 🏆")
-    if pontos_totais > 30:
-        print(f"Parabéns! Você foi um super agricultor do Agrinho 2026 com {pontos_totais} pontos!")
-    elif pontos_totais > 10:
-        print(f"Bom trabalho! Você conseguiu {pontos_totais} pontos.")
-    else:
-        print(f"Ops! Apenas {pontos_totais} pontos. Tente de novo para salvar sua fazenda!")
-
-if __name__ == "__main__":
-    main()
