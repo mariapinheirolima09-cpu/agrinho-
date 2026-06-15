@@ -1,10 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Meu Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 - Conectando o Campo</title>
+    <style>
+        /* Estilos Gerais e Cores do Agrinho */
+        :root {
+            --verde-escuro: #1b4d3e;
+            --verde-claro: #4caf50;
+            --amarelo: #ffeb3b;
+            --branco: #ffffff;
+            --cinza-claro: #f4f9f4;
+            --texto: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cinza-claro);
+            color: var(--texto);
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            color: var(--amarelo);
+        }
+
+        /* Container Principal */
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Seção de Introdução */
+        .intro {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Cartões Interativos (Pilares) */
+        .pilares-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .pilar-card {
+            background: var(--branco);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-top: 5px solid var(--verde-claro);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pilar-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pilar-card h3 {
+            color: var(--verde-escuro);
+            margin-top: 0;
+        }
+
+        /* Seção do Quiz Interativo */
+        .quiz-section {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .quiz-section h2 {
+            color: var(--amarelo);
+            margin-top: 0;
+        }
+
+        .opcoes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .btn-opcao {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--branco);
+            color: var(--branco);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .btn-opcao:hover {
+            background: var(--branco);
+            color: var(--verde-escuro);
+        }
+
+        /* Classes JS para o Quiz */
+        .correta {
+            background: var(--verde-claro) !important;
+            border-color: var(--verde-claro) !important;
+            color: white !important;
+        }
+
+        .errada {
+            background: #ff5252 !important;
+            border-color: #ff5252 !important;
+            color: white !important;
+        }
+
+        #mensagem-feedback {
+            font-weight: bold;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #e2ede2;
+            color: var(--verde-escuro);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-<h1>Meu site está funcionando!</h1>
+
+    <header>
+        <h1>Agrinho 2026</h1>
+        <p>Inovação, Sustentabilidade e o Futuro do Campo</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Bem-vindo ao Portal do Conhecimento</h2>
+            <p>O Programa Agrinho 2026 traz o lema da tecnologia aliada à preservação ambiental. Clique nos pilares abaixo para explorar como a nova geração está transformando o agronegócio de forma consciente!</p>
+        </section>
+
+        <section class="pilares-container">
+            <div class="pilar-card" onclick="alert('Tecnologia no Campo: Drones, sensores e IA ajudam o agricultor a economizar água e a produzir mais alimentos com menos recursos!')">
+                <h3>🌾 Tecnologia & Inovação</h3>
+                <p>Descubra como os robôs e satélites protegem as plantações e evitam o desperdício.</p>
+                <small style="color: var(--verde-claro);">Clique para saber mais →</small>
+            </div>
+
+            <div class="pilar-card" onclick="alert('Sustentabilidade: Práticas como a rotação de culturas e o plantio direto mantêm o solo saudável para as próximas gerações.')">
+                <h3>🌱 Sustentabilidade</h3>
+                <p>Cuidar da terra, da água e das florestas é o nosso dever principal.</p>
+                <small style="color: var(--verde-claro);">Clique para saber mais →</small>
+            </div>
+
+            <div class="pilar-card" onclick="alert('Cidadania: O Agrinho conecta a escola com a comunidade rural, valorizando o trabalho de quem alimenta as cidades.')">
+                <h3>🤝 Cidadania e Escolas</h3>
+                <p>A educação transforma a realidade de jovens no campo e na cidade.</p>
+                <small style="color: var(--verde-claro);">Clique para saber mais →</small>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>Desafio Agrinho 2026 🧠</h2>
+            <p id="pergunta">Qual das seguintes práticas ajuda a preservar a água e o solo na agricultura moderna?</p>
+            
+            <div class="opcoes-container">
+                <button class="btn-opcao" onclick="verificarResposta(this, false)">A) Uso excessivo de defensivos químicos sem controle.</button>
+                <button class="btn-opcao" onclick="verificarResposta(this, true)">B) Irrigação gota a gota e plantio direto sobre a palha.</button>
+                <button class="btn-opcao" onclick="verificarResposta(this, false)">C) Queimar os restos da colheita para limpar o terreno.</button>
+            </div>
+
+            <div id="mensagem-feedback"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Projeto Agrinho - Criado para inspirar o futuro do nosso planeta.</p>
+    </footer>
+
+    <script>
+        // Lógica do Quiz
+        function verificarResposta(botaoClicado, eCorreta) {
+            // Desabilita todos os botões após a escolha
+            const botoes = document.querySelectorAll('.btn-opcao');
+            botoes.forEach(btn => btn.disabled = true);
+
+            const feedback = document.getElementById('mensagem-feedback');
+
+            if (eCorreta) {
+                botaoClicado.classList.add('correta');
+                feedback.innerHTML = "🎉 Parabéns! Você acertou. A irrigação gota a gota evita o desperdício de água e o plantio direto protege o solo contra a erosão.";
+                feedback.style.color = "#4caf50";
+            </div> else {
+                botaoClicado.classList.add('errada');
+                feedback.innerHTML = "❌ Quase lá! A alternativa correta era a B. Práticas sustentáveis evitam queimadas e desperdícios.";
+                feedback.style.color = "#ff5252";
+                
+                // Destaca a alternativa correta também
+                botoes.forEach(btn => {
+                    if (btn.innerText.startsWith('B)')) {
+                        btn.classList.add('correta');
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 </html>
     
